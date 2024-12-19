@@ -6,10 +6,11 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>M$^3$-VOS: Multi-Phase, Multi-Transition, and Multi-Scenery Video Object Segmentation</title>
+  <title>M\(^3\)-VOS: Multi-Phase, Multi-Transition, and Multi-Scenery Video Object Segmentation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -93,7 +94,7 @@
             <span class="author-block">
               <a href="https://zixuan-chen.github.io">Zixuan Chen</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="">Jiaxin Li</a><sup>1</sup>,</span>
+              <a href="https://lijiaxin0111.github.io/">Jiaxin Li</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="">Liming Tan</a><sup>1</sup>,
             </span>
@@ -119,7 +120,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2412.13803"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -128,7 +129,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/pdf/2412.13803"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -148,7 +149,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/zixuan-chen/DeformVOS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -182,16 +183,14 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">ReVOS</span> on M\(^3\)-VOS dataset
       </h2>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -246,7 +245,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -257,31 +256,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Intelligent robots need to interact with diverse objects
+            across various environments. The appearance and state
+            of objects frequently undergo complex transformations depending on the object properties, e.g., phase transitions.
+            However, in the vision community, segmenting dynamic
+            objects with phase transitions is overlooked. In light of
+            this, we introduce the concept of phase in segmentation,
+            which categorizes real-world objects based on their visual characteristics and potential morphological and appearance changes. Then, we present a new benchmark,
+            Multi-Phase, Multi-Transition, and Multi-Scenery Video
+            Object Segmentation (M3-VOS), to verify the ability of
+            models to understand object phases, which consists of
+            479 high-resolution videos spanning over 10 distinct everyday scenarios. It provides dense instance mask annotations that capture both object phases and their transitions. We evaluate state-of-the-art methods on M3-VOS,
+            yielding several key insights. Notably, current appearancebased approaches show significant room for improvement
+            when handling objects with phase transitions. The inherent
+            changes in disorder suggest that the predictive performance
+            of the forward entropy-increasing process can be improved
+            through a reverse entropy-reducing process. These findings
+            lead us to propose ReVOS, a new plug-and-play model that
+            improves its performance by reversal refinement. Our data
+            and code will be publicly available.
           </p>
         </div>
       </div>
@@ -302,7 +295,7 @@
   </div>
 </section>
 
-
+<!-- 
 <section class="section">
   <div class="container is-max-desktop">
 
@@ -437,17 +430,17 @@
     <!--/ Concurrent Work. -->
 
   </div>
-</section>
+</section> -->
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{zixuan2024mcubevos,
+  author    = {Zixuan Chen and Jiaxin Li and Liming Tan and Yejie Guo and Junxuan Liang and Cewu Lu and Yonglu Li},
+  title     = {M$^3$-VOS: Multi-Phase, Multi-Transition, and Multi-Scenery Video Object Segmentation},
+  journal   = {arxiv},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
